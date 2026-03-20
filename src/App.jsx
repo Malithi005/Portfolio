@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Github, 
-  Linkedin, 
-  Mail, 
-  Phone, 
-  MapPin, 
-  ExternalLink, 
-  Code2, 
-  Database, 
-  Layers, 
-  Layout, 
-  Terminal, 
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Phone,
+  MapPin,
+  ExternalLink,
+  Code2,
+  Database,
+  Layers,
+  Layout,
+  Terminal,
   Cpu,
   GraduationCap,
   Briefcase,
@@ -66,11 +66,11 @@ const App = () => {
   return (
     <div className="app-container">
       <div className="radial-bg" />
-      
+
       {/* Navigation */}
       <nav className={`navbar ${isScrolled ? 'scrolled glass' : ''}`}>
         <div className="nav-content">
-          <motion.div 
+          <motion.div
             className="logo heading-font"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -80,7 +80,7 @@ const App = () => {
 
           <div className="nav-links desktop-only">
             {navLinks.map((link, i) => (
-              <motion.a 
+              <motion.a
                 key={link.name}
                 href={link.href}
                 initial={{ opacity: 0, y: -10 }}
@@ -90,14 +90,18 @@ const App = () => {
                 {link.name}
               </motion.a>
             ))}
-            <motion.button 
+            <motion.a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
               className="btn-primary"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5 }}
             >
               Resume <FileText size={18} />
-            </motion.button>
+            </motion.a>
+
           </div>
 
           <div className="mobile-only">
@@ -111,16 +115,16 @@ const App = () => {
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div 
+          <motion.div
             className="mobile-menu glass"
             initial={{ opacity: 0, x: '100%' }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
           >
             {navLinks.map(link => (
-              <a 
-                key={link.name} 
-                href={link.href} 
+              <a
+                key={link.name}
+                href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
@@ -134,15 +138,15 @@ const App = () => {
         {/* Hero Section */}
         <section id="hero" className="hero-section">
           <div className="hero-content">
-            <motion.div 
+            <motion.div
               className="hero-badge badge"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
             >
               Available for Internships
             </motion.div>
-            
-            <motion.h1 
+
+            <motion.h1
               className="hero-title"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -151,8 +155,8 @@ const App = () => {
               Building digital <br />
               <span className="gradient-text">experiences with precision.</span>
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
               className="hero-subtitle"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -160,8 +164,8 @@ const App = () => {
             >
               I'm <strong>Malithi Nadunika</strong>, a Computer Science Undergraduate passionate about Software Engineering and modern web technologies. Focused on building scalable systems and intuitive interfaces.
             </motion.p>
-            
-            <motion.div 
+
+            <motion.div
               className="hero-actions"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -175,8 +179,8 @@ const App = () => {
               </div>
             </motion.div>
           </div>
-          
-          <motion.div 
+
+          <motion.div
             className="hero-visual"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -206,7 +210,7 @@ const App = () => {
 
         {/* About Section */}
         <section id="about" className="about-section">
-          <motion.div 
+          <motion.div
             className="section-header"
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
@@ -215,21 +219,21 @@ const App = () => {
             <h2 className="section-title">Career Narrative</h2>
             <div className="section-line" />
           </motion.div>
-          
+
           <div className="about-grid">
-            <motion.div 
+            <motion.div
               className="about-text glass"
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: -30 }}
               viewport={{ once: true }}
             >
               <p>
-                As a Computer Science student, I have gained practical experience through academic and collaborative projects, 
+                As a Computer Science student, I have gained practical experience through academic and collaborative projects,
                 developing applications using **Python, React, and web development technologies**.
               </p>
               <p>
-                I thrive in team-based development environments where I can contribute to system design, implementation, 
-                and project coordination. My ultimate goal is to continuously improve my technical and project 
+                I thrive in team-based development environments where I can contribute to system design, implementation,
+                and project coordination. My ultimate goal is to continuously improve my technical and project
                 management abilities to build scalable, high-impact software systems.
               </p>
               <div className="contact-info-pills">
@@ -239,7 +243,7 @@ const App = () => {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="cert-highlights"
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: 30 }}
@@ -264,7 +268,7 @@ const App = () => {
 
         {/* Education Section */}
         <section id="education" className="edu-section">
-          <motion.div 
+          <motion.div
             className="section-header"
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
@@ -295,7 +299,7 @@ const App = () => {
                 year: '2024'
               }
             ].map((item, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 className="timeline-item"
                 whileInView={{ opacity: 1, x: 0 }}
@@ -316,7 +320,7 @@ const App = () => {
 
         {/* Skills Section */}
         <section id="skills" className="skills-section">
-          <motion.div 
+          <motion.div
             className="section-header center"
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
@@ -333,7 +337,7 @@ const App = () => {
               { title: 'Tools', icon: <Layout />, items: ['GitHub', 'IntelliJ', 'VS Code', 'MySQL', 'Figma'] },
               { title: 'Soft Skills', icon: <Briefcase />, items: ['Project Management', 'Teamwork', 'Critical Thinking', 'Leadership'] }
             ].map((cat, i) => (
-              <motion.div 
+              <motion.div
                 key={cat.title}
                 className="skill-card glass"
                 whileInView={{ opacity: 1, y: 0 }}
@@ -355,7 +359,7 @@ const App = () => {
 
         {/* Projects Section */}
         <section id="projects" className="projects-section">
-          <motion.div 
+          <motion.div
             className="section-header"
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
@@ -397,7 +401,7 @@ const App = () => {
               }
             ].map((proj, i) => (
 
-              <motion.div 
+              <motion.div
                 key={proj.title}
                 className="project-card glass overflow-hidden"
                 whileInView={{ opacity: 1, y: 0 }}
@@ -428,7 +432,7 @@ const App = () => {
 
         {/* Contact Section */}
         <section id="contact" className="contact-section">
-          <motion.div 
+          <motion.div
             className="contact-card glass"
             whileInView={{ opacity: 1, scale: 1 }}
             initial={{ opacity: 0, scale: 0.95 }}
@@ -437,7 +441,7 @@ const App = () => {
             <div className="contact-info">
               <h2 className="heading-font">Let's work together.</h2>
               <p>Looking for an enthusiastic intern to join your project? I'm ready to contribute and learn.</p>
-              
+
               <div className="info-list">
                 <a href="mailto:malithinadu@gmail.com" className="info-item">
                   <div className="info-icon"><Mail /></div>
@@ -471,7 +475,7 @@ const App = () => {
                 </a>
               </div>
             </div>
-            
+
             <div className="contact-footer">
               <p>&copy; {new Date().getFullYear()} Malithi Nadunika. Built with React.</p>
             </div>
