@@ -23,7 +23,13 @@ import {
 } from 'lucide-react';
 import './App.css';
 
+import harmonyImg from './assets/harmony.png';
+import lifeOnLandImg from './assets/life-on-land.png';
+import dataAnalysisImg from './assets/data-analysis.png';
+import taskManagerImg from './assets/task-manager.png';
+
 const App = () => {
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -366,30 +372,31 @@ const App = () => {
                 role: 'Front-End Developer / Marketing Manager',
                 desc: 'An adaptive music generation and Spotify song recommendation system. Focused on UI/UX and engagement.',
                 tags: ['React', 'Spotify API', 'UI Design'],
-                image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=800'
+                image: harmonyImg
               },
               {
                 title: 'Life On Land',
                 role: 'Lead Front-End Developer',
                 desc: 'Sustainability awareness website featuring multiple responsive pages with semantic HTML/CSS and interactive elements.',
                 tags: ['HTML5', 'CSS3', 'JavaScript'],
-                image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&q=80&w=800'
+                image: lifeOnLandImg
               },
               {
                 title: 'Data Analysis Engine',
                 role: 'Developer',
                 desc: 'Python-based application that processes and analyzes European airport departure datasets with 2D graphical visualizations.',
                 tags: ['Python', 'CSV Data', 'Matplotlib'],
-                image: 'https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=800'
+                image: dataAnalysisImg
               },
               {
                 title: 'Task Manager (GUI)',
                 role: 'Developer',
                 desc: 'A robust task management application with JSON-based data storage and an intuitive Tkinter-based user interface.',
                 tags: ['Python', 'Tkinter', 'JSON'],
-                image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&q=80&w=800'
+                image: taskManagerImg
               }
             ].map((proj, i) => (
+
               <motion.div 
                 key={proj.title}
                 className="project-card glass overflow-hidden"
