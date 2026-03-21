@@ -71,6 +71,7 @@
 .gradient-text {
   background: linear-gradient(135deg, var(--primary-light), var(--secondary), var(--accent-teal));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
