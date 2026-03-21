@@ -2,7 +2,7 @@
 
 A premium, high-impact personal portfolio built with **React** and **Vite**, designed to showcase my expertise in Software Engineering and React development to prospective internship recruiters.
 
-🚀 **Live Site:** [https://Malithi005.github.io/My_Portfolio/](https://Malithi005.github.io/My_Portfolio/)
+🚀 **Live Site:** [https://Malithi005.github.io/Portfolio/](https://Malithi005.github.io/Portfolio/)
 
 ---
 
@@ -31,5 +31,42 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/Malithi005/My_Portfolio.git
-   cd My_Portfolio
+   git clone https://github.com/Malithi005/Portfolio.git
+   cd Portfolio
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+
+## 📦 Deployment
+
+To deploy your portfolio to GitHub Pages:
+
+1. **Build and push:**
+   ```bash
+   npm run deploy
+   ```
+   This will automatically build the project and push it to the `gh-pages` branch.
+
+2. **Configure GitHub Pages:**
+   - In your GitHub repository **Settings > Pages**, set the **Source** to **Deploy from a branch**.
+   - Select the **`gh-pages`** branch and click **Save**.
+
+---
+
+## 📬 Contact
+
+- **Email**: malithinadu@gmail.com
+- **LinkedIn**: [Malithi Nadunika](https://linkedin.com/in/malithi-nadunika-0a940a33)
+- **GitHub**: [Malithi005](https://github.com/Malithi005)
+
+---
+
+&copy; 2024 Malithi Nadunika. Built with ❤️ and React.
