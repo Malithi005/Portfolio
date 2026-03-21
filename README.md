@@ -47,17 +47,14 @@ To run this project locally, follow these steps:
 
 ## 📦 Deployment
 
-To deploy your portfolio to GitHub Pages:
+This project is configured for fully automated deployment! 
 
-1. **Build and push:**
-   ```bash
-   npm run deploy
-   ```
-   This will automatically build the project and push it to a `gh-pages` branch.
+To deploy:
+1. **Push your changes** to the `main` branch.
+2. **Track the progress** in the **Actions** tab of your repository.
 
-2. **Configure GitHub Pages:**
-   - In your GitHub repository **Settings > Pages**, set the **Source** to **Deploy from a branch**.
-   - Select the **`gh-pages`** branch and click **Save**.
+The GitHub Actions workflow will automatically build the project and host it on GitHub Pages.
+
 
 ---
 
