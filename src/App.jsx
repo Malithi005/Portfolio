@@ -91,7 +91,7 @@ const App = () => {
               </motion.a>
             ))}
             <motion.a
-              href="/resume.pdf"
+              href={`${import.meta.env.BASE_URL}resume.pdf`}
               target="_blank"
               rel="noreferrer"
               className="btn-primary"
@@ -101,6 +101,7 @@ const App = () => {
             >
               Resume <FileText size={18} />
             </motion.a>
+
 
           </div>
 
