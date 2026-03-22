@@ -282,11 +282,15 @@ const App = () => {
               <h3 className="sub-heading">Certifications</h3>
               <div className="cert-list">
                 {[
+                  'Getting Started with DevOps on AWS',
+                  'Generative AI Overview For Project Managers - PMI',
+                  'Talking to AI: Prompt Engineering for Project Managers - PMI',
                   'Python GUI (Tkinter) - LinkedIn Learning',
                   'Python Essential Training - LinkedIn Learning',
                   'Python Data Analysis - LinkedIn Learning',
                   'Certified Entry-Level Python Programmer (PCEP)'
                 ].map((cert, i) => (
+
                   <div key={i} className="cert-item glass">
                     <span className="dot" /> {cert}
                   </div>
