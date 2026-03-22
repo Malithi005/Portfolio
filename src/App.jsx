@@ -27,8 +27,10 @@ import harmonyImg from './assets/harmony.png';
 import lifeOnLandImg from './assets/life-on-land.png';
 import dataAnalysisImg from './assets/data-analysis.png';
 import taskManagerImg from './assets/task-manager.png';
+import profileImg from './assets/profile.jpg';
 
 const App = () => {
+
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -70,13 +72,15 @@ const App = () => {
       {/* Navigation */}
       <nav className={`navbar ${isScrolled ? 'scrolled glass' : ''}`}>
         <div className="nav-content">
-          <motion.div
-            className="logo heading-font"
+          <motion.div 
+            className="logo-container"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
           >
-            MN<span>.</span>
+            <img src={profileImg} alt="Malithi Nadunika" className="nav-logo" />
+            <span className="logo heading-font">MN<span>.</span></span>
           </motion.div>
+
 
           <div className="nav-links desktop-only">
             {navLinks.map((link, i) => (
@@ -189,8 +193,9 @@ const App = () => {
           >
             <div className="profile-wrapper">
               <div className="profile-image glass">
-                <img src="https://ui-avatars.com/api/?name=Malithi+Nadunika&background=6366f1&color=fff&size=512" alt="Malithi Nadunika" />
+                <img src={profileImg} alt="Malithi Nadunika" />
               </div>
+
               <div className="stat-card glass p1">
                 <Code2 size={24} className="text-secondary" />
                 <div>
