@@ -43,19 +43,14 @@ const App = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const fadeInUp = {
-    initial: { y: 20, opacity: 0 },
-    animate: { y: 0, opacity: 1 },
-    transition: { duration: 0.6 }
-  };
+  useEffect(() => {
 
-  const staggerContainer = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1
-      }
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
     }
-  };
+  }, [mobileMenuOpen]);
 
   const navLinks = [
     { name: 'About', href: '#about' },
@@ -66,7 +61,7 @@ const App = () => {
   ];
 
   return (
-    <div className="app-container">
+    <div className={`app-container ${mobileMenuOpen ? 'menu-open' : ''}`}>
       <div className="radial-bg" />
 
       {/* Navigation */}
@@ -111,7 +106,7 @@ const App = () => {
 
           <div className="mobile-only">
             <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="menu-btn">
-              {mobileMenuOpen ? <X /> : <Menu />}
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -121,23 +116,52 @@ const App = () => {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            className="mobile-menu glass"
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
+            className="mobile-menu"
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.3 }}
           >
-            {navLinks.map(link => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
+            <div className="mobile-links">
+              {navLinks.map((link, i) => (
+                <motion.a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  {link.name}
+                </motion.a>
+              ))}
+              <motion.a
+                href={`${import.meta.env.BASE_URL}resume.pdf`}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary mt-2"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
               >
-                {link.name}
-              </a>
-            ))}
+                Resume <FileText size={18} />
+              </motion.a>
+            </div>
+
+            <motion.div 
+              className="mobile-socials"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7 }}
+            >
+              <a href="https://github.com/Malithi005" target="_blank" rel="noreferrer" className="social-icon"><Github /></a>
+              <a href="https://linkedin.com/in/malithi-nadunika-0a940a33" target="_blank" rel="noreferrer" className="social-icon"><Linkedin /></a>
+              <a href="mailto:malithinadu@gmail.com" className="social-icon"><Mail /></a>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
+
 
       <main>
         {/* Hero Section */}
