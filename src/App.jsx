@@ -331,6 +331,12 @@ const App = () => {
                 sub: 'GCE Advanced Level (Maths Stream)',
                 desc: 'High-school education with a focus on mathematics and analytical skills.',
                 year: '2024'
+              },
+              {
+                title: 'International Education (UK)',
+                sub: 'Charlotte Sharman & WoodFarm Primary',
+                desc: 'Developed strong communication, critical thinking, and adaptability through international academic experience.',
+                year: 'Early Education'
               }
             ].map((item, i) => (
               <motion.div
